@@ -1,0 +1,28 @@
+.feedback {
+  border-radius: 5px;
+  border: 0.8px solid #fff;
+  font-weight: 300;
+}
+p span {
+  border-radius: 5px;
+  height: 2rem;
+}
+li {
+  background: transparent;
+  color: #fff;
+  font-size: smaller;
+  padding: 0.1rem;
+  font-weight: 300;
+  border-color: #ffffff52;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bi-copy {
+  cursor: pointer;
+}
+span {
+  font-size: 0.7rem;
+  font-weight: 300;
+  margin-right: 0.1rem;
+}

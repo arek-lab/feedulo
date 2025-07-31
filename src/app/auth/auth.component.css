@@ -1,0 +1,61 @@
+.container {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.row {
+  width: 100%;
+}
+.form-control {
+  background-color: inherit;
+  color: inherit;
+}
+input {
+  border: none;
+}
+input:not(:focus) {
+  border-top: 0.8px solid transparent;
+  border-bottom: 0.8px solid #fff;
+  border-radius: 0;
+}
+textarea {
+  border: 0.8px solid #fff;
+}
+input:focus {
+  box-shadow: none;
+  outline: none;
+  border: 0.8px solid #fff;
+}
+input::-webkit-input-placeholder {
+  color: var(--color-light);
+  font-size: smaller;
+}
+
+input:-moz-placeholder {
+  color: var(--color-light);
+  font-size: smaller;
+}
+.form-control {
+  background-color: inherit;
+  color: inherit;
+}
+input {
+  border: none;
+}
+input[type="text"]:not(:focus),
+input[type="number"]:not(:focus) {
+  border-top: 0.8px solid transparent;
+  border-bottom: 0.8px solid #fff;
+  border-radius: 0;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[type="text"]:focus {
+  box-shadow: none;
+  outline: none;
+  border: 0.8px solid #fff;
+}
