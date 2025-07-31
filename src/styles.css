@@ -1,5 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --logo-orange: #fb923c;
+}
+.logo-color {
+  color: var(--logo-orange)
+}
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed navbar */
+section[id] {
+  scroll-margin-top: 80px;
+}
 body {
   position: relative;
   min-height: 82vh;
+}
+.btn-primary {
+  background: linear-gradient(to left, #fb923c, #d68e53);
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 15px #fb923c20;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px #fb923c3e;
+}
+
+.btn-outline-light, .btn-outline-light:hover {
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  align-self: center;
 }

@@ -1,28 +1,118 @@
 .navbar {
-  border-bottom: 1px solid #ffffff15;
+  /* border-bottom: 1px solid #ffffff51; */
+  height: 4rem;
+  z-index: 100;
 }
 a {
   cursor: pointer;
 }
-.navbar-brand {
-  flex: 1;
+
+.navbar {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
 }
-.credits {
-  margin: 0 2rem;
+
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  margin: 0 0.25rem;
+  position: relative;
+  transition: all 0.1s ease;    
 }
-svg {
-  color: #fffa8d;
-  margin-left: 0.5rem;
+
+.navbar-nav .nav-link:hover {
+  /* transform: translateY(-1px); */
 }
-span {
-  font-size: 1rem;
-  color: #fffa8d;
+
+.navbar-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background: linear-gradient(45deg, #fb923c, #d68e53);
+  transition: all 0.1s ease;
+  transform: translateX(-50%);
 }
-@media (max-width: 400px) {
-  .navbar-brand {
-    font-size: 1rem;
+
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+#navbarNav { 
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: transparent;
+}
+#navbarNav.show {
+  background-color: #c5a7a713;
+  backdrop-filter: blur(5px);        
+  -webkit-backdrop-filter: blur(3px); 
+  color: white;     
+}
+.collapse.navbar-collapse {
+  transition: all 0.3s ease-in-out;
+}
+
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  margin-top: 0.5rem;
+  background-color: #ede2e23b;
+  backdrop-filter: blur(5px);        
+  -webkit-backdrop-filter: blur(3px); 
+  color: white;  
+}
+
+.dropdown-item {
+  padding: 0.75rem 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background: linear-gradient(45deg, #fb923c, #d68e53);
+  color: white;
+  transform: translateX(5px);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+  .navbar {
+    height: auto;
   }
-  .credits {
-    margin: 0 0.5rem;
+  .navbar-nav {
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  .navbar-nav .nav-item {
+    padding: 0.25rem 0;
+  }
+  
+  .btn-primary {
+    margin-top: 1rem;
+    width: 100%;
+  }
+  
+  .navbar-collapse {
+    background: rgba(33, 37, 41, 0.95);
+    margin-top: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
   }
 }
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed navbar */
+section[id] {
+  scroll-margin-top: 80px;
+}
+

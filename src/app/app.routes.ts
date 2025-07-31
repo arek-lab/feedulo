@@ -5,9 +5,11 @@ import { SettingsComponent } from './settings/settings.component';
 import { HistoryComponent } from './history/history.component';
 import { authGuard } from './auth/auth.guard';
 import { ChatResponseComponent } from './chat-response/chat-response.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent},
   {
     path: 'dashboard',
     component: DashboardComponent,

@@ -1,4 +1,4 @@
-import { Component, effect, inject, signal } from '@angular/core';
+import { Component, effect, ElementRef, inject, signal, ViewChild } from '@angular/core';
 import { AuthService } from '../auth/auth.service';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { User } from '../auth/user.model';
@@ -17,12 +17,19 @@ export class NavbarComponent {
   private router = inject(Router);
   user = signal<User | null>(null);
   llmResponse = this.storageService.chatResponse;
+  @ViewChild('navbarCollapse', { static: true }) navbarCollapse!: ElementRef;
 
   constructor() {
     effect(() => {
       this.user = this.authService.user;
       this.llmResponse = this.storageService.chatResponse;
     });
+  }
+  closeMenu() {
+    const collapseElement = this.navbarCollapse.nativeElement;
+    if (collapseElement.classList.contains('show')) {
+      collapseElement.classList.remove('show');
+    }
   }
 
   logout() {
