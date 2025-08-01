@@ -39,9 +39,21 @@ export class NavbarComponent {
       next: () => {
         this.router.navigate(['auth', 'in']);
       },
-      error: (err) => {
+      error: err => {
         console.log(err);
       },
     });
   }
+
+  scrollTo(place: string): void {
+    const contactElement = document.querySelector(`#${place}`);
+    if (contactElement) {
+      contactElement.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      this.closeMenu()
+    }
+  }
 }
+

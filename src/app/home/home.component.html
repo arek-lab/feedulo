@@ -1,4 +1,4 @@
-<header class="feedulo-fullscreen py-5 d-flex justify-content-center align-items-center" #home>
+<header class="feedulo-fullscreen py-5 d-flex justify-content-center align-items-center" #home id="home">
     <div class="container px-4 px-sm-5 mt-5">
         <div class="row gx-5 justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
@@ -10,7 +10,7 @@
                         Automatyzuj feedback dzięki AI. Szybciej, trafniej i bez niezręczności. Pomagamy budować kulturę informacji zwrotnej, która naprawdę działa.
                     </p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-center flex-column flex-sm-row">
-                        <a class="btn btn-primary btn-lg px-4" href="#features">Wypróbuj za darmo</a>
+                        <a class="btn btn-primary btn-lg px-4" href="/auth/up">Wypróbuj za darmo</a>
                         <a class="btn btn-outline-light btn-lg px-4" (click)="scrollTo('features')">Dowiedz się więcej ⇀</a>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
 </section>
 
 <!-- Contact section -->
-<section class="py-5 feedulo-fullscreen contact" #contact>
+<section class="py-5 feedulo-fullscreen contact mt-3" #contact id="contact">
     <div class="container px-4 px-sm-5 my-5">
         <div class="text-center mb-5">
             <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-envelope fs-3"></i></div>
