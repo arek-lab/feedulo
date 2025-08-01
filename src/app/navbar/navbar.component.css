@@ -21,10 +21,6 @@ a {
   transition: all 0.1s ease;    
 }
 
-.navbar-nav .nav-link:hover {
-  /* transform: translateY(-1px); */
-}
-
 .navbar-nav .nav-link::after {
   content: '';
   position: absolute;
