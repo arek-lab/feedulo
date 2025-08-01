@@ -43,3 +43,10 @@ body {
   font-size: 0.8rem;
   align-self: center;
 }
+
+.disabled {
+  background-color: var(--btn-color) !important; 
+  opacity: 0.7;
+  pointer-events: none;
+  cursor: none;
+}

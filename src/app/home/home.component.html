@@ -10,7 +10,7 @@
                         Automatyzuj feedback dzięki AI. Szybciej, trafniej i bez niezręczności. Pomagamy budować kulturę informacji zwrotnej, która naprawdę działa.
                     </p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-center flex-column flex-sm-row">
-                        <a class="btn btn-primary btn-lg px-4" href="#features">Get Started</a>
+                        <a class="btn btn-primary btn-lg px-4" href="#features">Wypróbuj za darmo</a>
                         <a class="btn btn-outline-light btn-lg px-4" (click)="scrollToFeatures()">Dowiedz się więcej ⇀</a>
                     </div>
                 </div>
@@ -37,28 +37,28 @@
         </div>
 
         <!-- Features row 1 -->
-        <div class="row gx-4 gy-4 justify-content-center mb-4">
+        <div class="row gx-4 gy-4 justify-content-center mb-3">
             <div class="col-12 col-md-6 col-lg-4 text-center">
-                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-collection fs-2"></i></div>
+                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-collection fs-3"></i></div>
                 <h4 class="fw-bolder">Szybkie przygotowanie feedbacku</h4>
-                <p class="feature-p">Manager generuje feedback za pomocą interfejsu i wysyła spersonalizowane opinie do wielu pracowników, oszczędzając czas i eliminując opóźnienia.</p>
+                <p class="feature-p">Manager generuje feedback za pomocą interfejsu i wysyła spersonalizowane informacje zwrotne do wielu pracowników, oszczędzając czas i eliminując opóźnienia.</p>
             </div>
             <div class="col-12 col-md-6 col-lg-4 text-center">
-                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-building fs-2"></i></div>
+                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-building fs-3"></i></div>
                 <h4 class="fw-bolder">Pełna automatyzacja</h4>
-                <p class="feature-p">System na podstawie aktualnych rezultatów wysyła okresowe feedbacki – opcja pełnej customowej automatyzacji to pełna kontrola nad komunikacją.</p>
+                <p class="feature-p">System na podstawie aktualnych rezultatów wysyła okresowe feedbacki - opcja pełnej customowej automatyzacji to pełna kontrola nad komunikacją w firmie.</p>
             </div>
         </div>
 
         <!-- Features row 2 -->
         <div class="row gx-4 gy-4 justify-content-center">
             <div class="col-12 col-md-6 col-lg-4 text-center">
-                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-toggles2 fs-2"></i></div>
+                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-toggles2 fs-3"></i></div>
                 <h4 class="fw-bolder">Wskazówki od managerów</h4>
                 <p class="feature-p">Feedback może zawierać wskazówki i zadania od managerów wyższego szczebla, które pozwalają zespołowi szybciej reagować i dostosowywać się do zmian rynkowych.</p>
             </div>
             <div class="col-12 col-md-6 col-lg-4 text-center">
-                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-check2-circle fs-2"></i></div>
+                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-check2-circle fs-3"></i></div>
                 <h4 class="fw-bolder">Pewność odbioru i akcji</h4>
                 <p class="feature-p">Merytoryczny i wysokiej jakości feedback jest dostarczany na czas, dzięki czemu pracownicy mogą rozwijać siebie i wpływać na realny rozwój zespołu.</p>
             </div>
@@ -70,47 +70,52 @@
 <section class="bg-light py-5 feedulo-fullscreen">
     <div class="container px-4 px-sm-5 my-5">
         <div class="text-center mb-5">
-            <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-envelope fs-2"></i></div>
+            <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-envelope fs-3"></i></div>
             <h2 class="fw-bolder">Skontaktuj się z nami</h2>
-            <p class="lead mb-0">Chętnie odpowiemy na wszystkie pytania</p>
+            <p class="lead mb-0">Twój biznes jest dla nas ważny</p>
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-6">
-                <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                <form id="contactForm">
                     <!-- Name input -->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                        <input 
+                            class="form-control" 
+                            id="name" 
+                            type="text" 
+                            placeholder="Enter your name..."  />
                         <label for="name">Imię i nazwisko</label>
-                        <div class="invalid-feedback" data-sb-feedback="name:required">Imię jest wymagane.</div>
                     </div>
                     <!-- Email input -->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
+                        <input 
+                            class="form-control" 
+                            id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
                         <label for="email">Adres email</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">Email jest wymagany.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Nieprawidłowy email.</div>
                     </div>
                     <!-- Phone input -->
                     <div class="form-floating mb-3">
-                        <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                        <label for="phone">Numer telefonu</label>
-                        <div class="invalid-feedback" data-sb-feedback="phone:required">Telefon jest wymagany.</div>
+                        <input 
+                            class="form-control" 
+                            id="phone" 
+                            type="tel" 
+                            placeholder="(123) 456-7890"  />
+                        <label for="phone">Numer telefonu (opcjonalnie)</label>
                     </div>
                     <!-- Message input -->
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" id="message" placeholder="Wpisz swoją wiadomość..." style="height: 10rem" data-sb-validations="required"></textarea>
+                        <textarea 
+                            class="form-control" 
+                            id="message" 
+                            placeholder="Wpisz swoją wiadomość..." style="height: 8rem" data-sb-validations="required"></textarea>
                         <label for="message">Wiadomość</label>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">Wiadomość jest wymagana.</div>
                     </div>
                     <!-- Success / error messages -->
                     <div class="d-none" id="submitSuccessMessage">
                         <div class="text-center mb-3">
                             <div class="fw-bolder">Wysłano poprawnie!</div>
-                            Formularz został aktywowany – sprawdź więcej na:<br />
-                            <a href="https://startbootstrap.com/solution/contact-forms">StartBootstrap Contact Forms</a>
                         </div>
                     </div>
-                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Błąd wysyłania wiadomości!</div></div>
                     <!-- Submit button -->
                     <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Wyślij pytanie</button></div>
                 </form>

@@ -42,7 +42,7 @@
       <!-- Right side navigation - User actions -->
       <ul class="navbar-nav ms-auto">
         <!-- Dashboard link for logged users -->
-        @if(user()){
+        @if(!user()){
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -102,7 +102,7 @@
             routerLinkActive="active"
             (click)="closeMenu()"
           >
-            Rozpocznij za darmo
+            Rejestracja
           </a>
         </li>
         }
