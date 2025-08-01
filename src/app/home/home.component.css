@@ -1,18 +1,4 @@
-.gradient-wrapper {
-  background: #111827;
-}
-.feedulo-fullscreen {
-  /* background: 
-    radial-gradient(ellipse at 20% 80%, #101727 10%, transparent 80%),
-    radial-gradient(ellipse at 80% 20%, #101728 20%, transparent 80%),
-    radial-gradient(ellipse at 40% 40%, #443657 20%, transparent 80%),
-    radial-gradient(ellipse at 30% 50%, #443657 0%, transparent 50%),
-    linear-gradient(135deg, #0a0a0f 0%, #1a1428 50%, #0f0f1a 100%); */
-    /* background: radial-gradient(ellipse at 25% 40%, rgba(255, 140, 0, 0.15) 0%, transparent 40%),
-           radial-gradient(ellipse at 70% 20%, rgba(6, 5, 31, 0.25) 0%, transparent 45%),
-           radial-gradient(ellipse at 15% 80%, #0802201a 0%, transparent 35%),
-           linear-gradient(135deg, #0a0a0f 0%, #151526 30%, #1a1a35 60%, #2d1b3d 85%, #3d2547 100%); */
-  
+.feedulo-fullscreen {  
   background-image: 
   radial-gradient(ellipse at 45% 45%, #443a50 5%, transparent 30%),
   radial-gradient(ellipse at 30% 30%, #443a50 10%, transparent 40%),
@@ -65,4 +51,14 @@ h4.fw-bolder {
   header p {
     font-size: 1.2rem;
   }
+}
+
+.contact h2 {
+  font-weight: 300 !important;
+}
+
+input.ng-invalid.ng-touched, 
+textarea.ng-invalid.ng-touched {
+  box-shadow: none;
+  background-color: rgb(246, 216, 246);
 }

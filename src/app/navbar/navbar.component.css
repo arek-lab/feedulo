@@ -1,7 +1,7 @@
 .navbar {
   background-image: linear-gradient(to bottom, var(--bg-root-color), #1118279d);;
   height: 4rem;
-  z-index: 100;
+  z-index: 1000;
 }
 a {
   cursor: pointer;
@@ -43,9 +43,11 @@ a {
 }
 #navbarNav.show {
   background-color: #c5a7a713;
+  background-color: var(--bg-root-color);
   backdrop-filter: blur(5px);        
   -webkit-backdrop-filter: blur(3px); 
-  color: white;     
+  color: white;  
+  
 }
 .collapse.navbar-collapse {
   transition: all 0.3s ease-in-out;
@@ -60,7 +62,7 @@ a {
   background-color: #ede2e23b;
   backdrop-filter: blur(5px);        
   -webkit-backdrop-filter: blur(3px); 
-  color: white;  
+  color: white;   
 }
 
 .dropdown-item {
@@ -111,4 +113,6 @@ html {
 section[id] {
   scroll-margin-top: 80px;
 }
+/* fixing z-bug */
+
 

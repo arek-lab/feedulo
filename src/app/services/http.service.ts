@@ -5,6 +5,7 @@ import { StorageService } from './storage.service';
 import { AuthService } from '../auth/auth.service';
 import { User } from '../auth/user.model';
 import { environment } from '../../environments/environment';
+import { contactMessage } from './contact-message-model';
 
 @Injectable({
   providedIn: 'root',
@@ -63,5 +64,10 @@ export class HttpService {
           this.autoLogLoading.set(false);
         },
       });
+  }
+
+  sendContactMessage(customerMessage: contactMessage){
+    return this.http
+      .post<contactMessage>(this.apiDomain + 'contact', customerMessage)
   }
 }

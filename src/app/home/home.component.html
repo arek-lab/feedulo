@@ -1,4 +1,4 @@
-<header class="feedulo-fullscreen py-5 d-flex justify-content-center align-items-center">
+<header class="feedulo-fullscreen py-5 d-flex justify-content-center align-items-center" #home>
     <div class="container px-4 px-sm-5 mt-5">
         <div class="row gx-5 justify-content-center">
             <div class="col-12 col-md-10 col-lg-8">
@@ -11,7 +11,7 @@
                     </p>
                     <div class="d-grid gap-2 d-sm-flex justify-content-center flex-column flex-sm-row">
                         <a class="btn btn-primary btn-lg px-4" href="#features">Wypróbuj za darmo</a>
-                        <a class="btn btn-outline-light btn-lg px-4" (click)="scrollToFeatures()">Dowiedz się więcej ⇀</a>
+                        <a class="btn btn-outline-light btn-lg px-4" (click)="scrollTo('features')">Dowiedz się więcej ⇀</a>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
 </section>
 
 <!-- Contact section -->
-<section class="bg-light py-5 feedulo-fullscreen">
+<section class="py-5 feedulo-fullscreen contact" #contact>
     <div class="container px-4 px-sm-5 my-5">
         <div class="text-center mb-5">
             <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-envelope fs-3"></i></div>
@@ -76,48 +76,51 @@
         </div>
         <div class="row justify-content-center">
             <div class="col-12 col-md-10 col-lg-6">
-                <form id="contactForm">
-                    <!-- Name input -->
-                    <div class="form-floating mb-3">
+                <form id="contactForm" [formGroup]="contactForm" (submit)="onSubmit()">
+                    <div class="form-group mb-3">
                         <input 
                             class="form-control" 
                             id="name" 
                             type="text" 
-                            placeholder="Enter your name..."  />
-                        <label for="name">Imię i nazwisko</label>
+                            placeholder="Imię i nazwisko"  
+                            formControlName="name"/>
                     </div>
-                    <!-- Email input -->
-                    <div class="form-floating mb-3">
+                    <div class="form-group mb-3">
                         <input 
                             class="form-control" 
-                            id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                        <label for="email">Adres email</label>
+                            id="email" type="email" placeholder="Adres email" data-sb-validations="required,email" 
+                            formControlName="email" />
                     </div>
-                    <!-- Phone input -->
-                    <div class="form-floating mb-3">
+                    <div class="form-group mb-3">
                         <input 
                             class="form-control" 
                             id="phone" 
                             type="tel" 
-                            placeholder="(123) 456-7890"  />
-                        <label for="phone">Numer telefonu (opcjonalnie)</label>
+                            placeholder="Telefon (opcjonalnie)"
+                            formControlName="phone"  />
                     </div>
-                    <!-- Message input -->
-                    <div class="form-floating mb-3">
+                    <div class="form-group mb-3">
                         <textarea 
                             class="form-control" 
                             id="message" 
-                            placeholder="Wpisz swoją wiadomość..." style="height: 8rem" data-sb-validations="required"></textarea>
-                        <label for="message">Wiadomość</label>
+                            placeholder="Wpisz swoją wiadomość..." style="height: 8rem" data-sb-validations="required"
+                            formControlName="message" ></textarea>
                     </div>
-                    <!-- Success / error messages -->
-                    <div class="d-none" id="submitSuccessMessage">
-                        <div class="text-center mb-3">
-                            <div class="fw-bolder">Wysłano poprawnie!</div>
+                     @if (showConfirm()) {
+                        <div>
+                            <div class="text-center mb-3">
+                                <div class="fw-bolder">{{ showConfirm() }}</div>
+                            </div>
                         </div>
+                     }
+                    <div class="d-grid gap-2 d-sm-flex justify-content-center flex-column flex-sm-row">
+                        <button 
+                            class="btn btn-primary btn-lg px-4"
+                            type="submit"
+                            [ngClass]="{'disabled': contactForm.invalid}"
+                            >Wyślij wiadomość
+                        </button>
                     </div>
-                    <!-- Submit button -->
-                    <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Wyślij pytanie</button></div>
                 </form>
             </div>
         </div>
