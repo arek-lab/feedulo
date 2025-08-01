@@ -1,5 +1,5 @@
 .navbar {
-  /* border-bottom: 1px solid #ffffff51; */
+  background-image: linear-gradient(to bottom, var(--bg-root-color), #1118279d);;
   height: 4rem;
   z-index: 100;
 }

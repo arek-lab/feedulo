@@ -1,24 +1,22 @@
-.feedulo-gradient {
-  background: 
-    radial-gradient(ellipse at 20% 80%, rgba(120, 30, 150, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(80, 50, 180, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at 40% 40%, rgba(100, 20, 120, 0.2) 0%, transparent 50%),
-    linear-gradient(135deg, #0a0a0f 0%, #1a1428 50%, #0f0f1a 100%);
-}
-.feedulo-gradient-diffused {
-  background: 
-    radial-gradient(circle at 15% 85%, rgba(140, 40, 180, 0.3) 0%, transparent 60%),
-    radial-gradient(circle at 85% 15%, rgba(90, 60, 200, 0.25) 0%, transparent 55%),
-    radial-gradient(circle at 45% 60%, rgba(110, 30, 140, 0.2) 0%, transparent 50%),
-    radial-gradient(circle at 70% 70%, rgba(80, 20, 100, 0.15) 0%, transparent 45%),
-    #0d0d18;
+.gradient-wrapper {
+  background: #111827;
 }
 .feedulo-fullscreen {
-  background: 
-    radial-gradient(ellipse at 20% 80%, rgba(48, 30, 150, 0.4) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(50, 67, 180, 0.3) 0%, transparent 50%),
-    radial-gradient(ellipse at 40% 40%, rgba(40, 98, 156, 0.2) 0%, transparent 50%),
-    linear-gradient(135deg, #0a0a0f 0%, #1a1428 50%, #0f0f1a 100%);
+  /* background: 
+    radial-gradient(ellipse at 20% 80%, #101727 10%, transparent 80%),
+    radial-gradient(ellipse at 80% 20%, #101728 20%, transparent 80%),
+    radial-gradient(ellipse at 40% 40%, #443657 20%, transparent 80%),
+    radial-gradient(ellipse at 30% 50%, #443657 0%, transparent 50%),
+    linear-gradient(135deg, #0a0a0f 0%, #1a1428 50%, #0f0f1a 100%); */
+    /* background: radial-gradient(ellipse at 25% 40%, rgba(255, 140, 0, 0.15) 0%, transparent 40%),
+           radial-gradient(ellipse at 70% 20%, rgba(6, 5, 31, 0.25) 0%, transparent 45%),
+           radial-gradient(ellipse at 15% 80%, #0802201a 0%, transparent 35%),
+           linear-gradient(135deg, #0a0a0f 0%, #151526 30%, #1a1a35 60%, #2d1b3d 85%, #3d2547 100%); */
+  
+  background-image: 
+  radial-gradient(ellipse at 45% 45%, #443a50 5%, transparent 30%),
+  radial-gradient(ellipse at 30% 30%, #443a50 10%, transparent 40%),
+  linear-gradient(to top left, var(--bg-root-color), #111827);
   min-height: 100vh;
   width: 100%;
 }
@@ -48,10 +46,10 @@ h1 {
   font-size: 1rem;
 }
 i:not(.bi-arrow-right) {
-  background-color: var(--logo-orange);
+  background-color: var(--btn-color);
 }
 .custom-bg {
-  background-color: var(--logo-orange); /* np. niebieski */
+  background-color: var(--btn-color);
 }
 h4.fw-bolder {
   font-size: 1.3rem;
