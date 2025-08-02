@@ -29,6 +29,8 @@ export class DashboardComponent implements OnInit {
   sensitivity = signal('średnia');
   historical = signal('ok. 100%');
   isEditingMode = this.storageService.isEditingMode;
+  sidebarOpen = false;
+  isMobile = false;
 
   formData = new FormGroup({
     sensitivity: new FormControl('2'),
@@ -59,8 +61,20 @@ export class DashboardComponent implements OnInit {
   ) as FormArray;
 
   ngOnInit(): void {
+    this.checkScreenSize();
     if (!this.isEditingMode()) return;
     this.fillForm();
+  }
+
+  checkScreenSize() {
+    this.isMobile = window.innerWidth < 768; // Bootstrap md breakpoint
+    if (!this.isMobile) {
+      this.sidebarOpen = true; // auto show on desktop
+    }
+  }
+
+  toggleSidebar() {
+    this.sidebarOpen = !this.sidebarOpen;
   }
 
   onAddInputs() {
@@ -181,7 +195,7 @@ export class DashboardComponent implements OnInit {
     ) as FormArray;
     productResultsArray.clear();
 
-    results.forEach((result) => {
+    results.forEach(result => {
       productResultsArray.push(
         new FormGroup({
           product: new FormControl(result.product ?? null),
@@ -197,7 +211,7 @@ export class DashboardComponent implements OnInit {
     ) as FormArray;
     developmentActivitiesArray.clear();
 
-    activities.forEach((activity) => {
+    activities.forEach(activity => {
       developmentActivitiesArray.push(new FormControl(activity));
     });
   }

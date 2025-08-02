@@ -25,18 +25,20 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/home" (click)="closeMenu()">Strona główna</a>
         </li>
-        <li class="nav-item">
+        @if(!user()) {
+          <li class="nav-item">
           <a class="nav-link" (click)="scrollTo('features')">Funkcje</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">Cennik</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link">O nas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" (click)="scrollTo('contact')">Kontakt</a>
-        </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Cennik</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">O nas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scrollTo('contact')">Kontakt</a>
+          </li>
+        }
       </ul>
       
       <!-- Right side navigation - User actions -->

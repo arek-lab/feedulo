@@ -12,9 +12,13 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent},
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [authGuard],
+    component: DashboardComponent
   },
+  // {
+  //   path: 'dashboard',
+  //   component: DashboardComponent,
+  //   canActivate: [authGuard],
+  // },
   {
     path: 'feedback',
     component: ChatResponseComponent,
