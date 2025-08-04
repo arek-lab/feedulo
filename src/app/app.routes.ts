@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { AuthComponent } from './auth/auth.component';
 import { SettingsComponent } from './settings/settings.component';
 import { HistoryComponent } from './history/history.component';
 import { authGuard } from './auth/auth.guard';
 import { ChatResponseComponent } from './chat-response/chat-response.component';
 import { HomeComponent } from './home/home.component';
+import { DashboardComponent } from './dashboard/dashboard.compnent';
 
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },

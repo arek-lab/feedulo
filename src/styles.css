@@ -11,7 +11,6 @@
 html {
   scroll-behavior: smooth;
 }
-
 /* Offset for fixed navbar */
 section[id] {
   scroll-margin-top: 80px;

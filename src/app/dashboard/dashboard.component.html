@@ -1,41 +1,95 @@
-<div class="container-fluid dashboard-container">
-  <div class="row h-100">
+<!-- Główny kontener dashboard -->
+<div class="dashboard-container d-flex bg-dark">
+    <!-- Przycisk toggle sidebar -->
+    <button class="sidebar-toggle" #sidebarToggle type="button">
+       <i class="fa-solid fa-sliders"></i>
+    </button>
+
+    <!-- Overlay dla małych ekranów -->
+    <div class="sidebar-overlay" #sidebarOverlay></div>
+
     <!-- Sidebar -->
-    <nav class="col-12 col-md-2 col-lg-2 bg-dark text-white p-3 d-flex flex-column overflow-auto">
-      <div class="mb-4 d-flex justify-content-between">
-        <h5 class="">Menu</h5>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
-        </svg>
+    <div class="sidebar bg-dark pt-5" #sidebar>
+        <div class="sidebar-header pt-1">
+            <h5 class="mb-0">Menu</h5>
+        </div>
+    </div>
 
-      </div>
-      <ul class="nav flex-column">
-        <li class="nav-item mb-2">
-          <a class="nav-link text-white" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a class="nav-link text-white" href="#">Zadania</a>
-        </li>
-        <li class="nav-item mb-2">
-          <a class="nav-link text-white" href="#">Ustawienia</a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Main content -->
-    <main class="col-12 col-md-10 col-lg-10 d-flex flex-column p-2">
-      <div class="flex-fill d-flex flex-column">
-        <div class="flex-fill mb-2">
-          <div class="bg-light h-100 rounded shadow-sm p-3">
-            <h5>Sekcja górna</h5>
+    <!-- Główna przestrzeń robocza -->
+  <div class="main-content flex-fill bg-dark" #mainContent>
+      <!-- Górna sekcja (50% wysokości) -->
+      <div class="workspace-top bg-dark text-center">
+          <div class="workspace-header mb-3 mt-3">
+              Dostosuj parametry feedbacku
+          </div>
+          <div
+          class="d-flex justify-content-center align-items-center p-2 container-md flex-wrap"
+        >
+          <div class=" flex-grow-1 option">
+            <div class="rainbow-box d-flex g-2">
+              <div class="flex-grow-1 w-sm-50 w-md-25">
+                <input
+                  type="radio"
+                  name="colors"
+                  value="1"
+                  id="radio1"
+                  formControlName="colors"
+                />
+                <label for="radio1">Ewolucyjny turkus</label>
+              </div>
+              <div class="flex-grow-1 w-sm-50 w-md-25">
+                <input
+                  type="radio"
+                  name="colors"
+                  id="radio2"
+                  value="2"
+                  formControlName="colors"
+                />
+                <label for="radio2">Pluralistyczna zieleń</label>
+              </div>
+              <div class="flex-grow-1 w-sm-50 w-md-25">
+                <input
+                  type="radio"
+                  name="colors"
+                  id="radio3"
+                  value="3"
+                  checked
+                  formControlName="colors"
+                />
+                <label for="radio3">Oranż osiągnięć</label>
+              </div>
+              <div class="flex-grow-1 w-sm-50 w-md-25">
+                <input
+                  type="radio"
+                  name="colors"
+                  id="radio4"
+                  value="4"
+                  formControlName="colors"
+                />
+                <label for="radio4">Konformistyczny bursztyn</label>
+              </div>
+              <div class="flex-grow-1 w-sm-50 w-md-25">
+                <input
+                  type="radio"
+                  name="colors"
+                  id="radio5"
+                  value="5"
+                  formControlName="colors"
+                />
+                <label for="radio5">Impulsywna czerwień</label>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="flex-fill">
-          <div class="bg-light h-100 rounded shadow-sm p-3">
-            <h5>Sekcja dolna</h5>
-          </div>
-        </div>
+          
       </div>
-    </main>
+
+      <!-- Dolna sekcja (50% wysokości) -->
+      <div class="workspace-bottom bg-dark text-center">
+          <div class="workspace-header">
+              <i class="fas fa-table me-2"></i>Dolna przestrzeń robocza
+          </div>
+          
+      </div>
   </div>
 </div>

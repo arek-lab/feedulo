@@ -64,6 +64,7 @@ export class DashboardComponent implements OnInit {
     this.checkScreenSize();
     if (!this.isEditingMode()) return;
     this.fillForm();
+    document.body.classList.add('no-app-home');
   }
 
   checkScreenSize() {
