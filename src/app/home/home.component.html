@@ -1,135 +1,179 @@
-<header class="feedulo-fullscreen py-5 d-flex justify-content-center align-items-center" #home id="home">
-    <div class="container px-4 px-sm-5 mt-5">
-        <div class="row gx-5 justify-content-center">
-            <div class="col-12 col-md-10 col-lg-8">
-                <div class="text-center my-4 my-md-5">
-                    <h1 class="display-6 display-md-5 fw-bolder text-white mb-3">
-                        Feedback <span class="logo-color">tworzy</span> lepsze zespoły
-                    </h1>
-                    <p class="lead text-white-50 mb-4">
-                        Automatyzuj feedback dzięki AI. Szybciej, trafniej i bez niezręczności. Pomagamy budować kulturę informacji zwrotnej, która naprawdę działa.
-                    </p>
-                    <div class="d-grid gap-2 d-sm-flex justify-content-center flex-column flex-sm-row">
-                        <a class="btn btn-primary btn-lg px-4" href="/auth/up">Wypróbuj za darmo</a>
-                        <a class="btn btn-outline-light btn-lg px-4" (click)="scrollTo('features')">Dowiedz się więcej ⇀</a>
-                    </div>
-                </div>
-            </div>
+<header
+  class="feedulo-fullscreen py-5 d-flex justify-content-center align-items-center"
+  #home
+  id="home"
+>
+  <div class="container px-4 px-sm-5 mt-5">
+    <div class="row gx-5 justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="text-center my-4 my-md-5">
+          <h1 class="display-6 display-md-5 fw-bolder text-white mb-3">
+            Feedback <span class="logo-color">tworzy</span> lepsze zespoły
+          </h1>
+          <p class="lead text-white-50 mb-4">
+            Automatyzuj feedback dzięki AI. Szybciej, trafniej i bez niezręczności. Pomagamy budować
+            kulturę informacji zwrotnej, która naprawdę działa.
+          </p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-center flex-column flex-sm-row">
+            <a class="btn btn-primary btn-lg px-4" href="/auth/up">Wypróbuj za darmo</a>
+            <a class="btn btn-outline-light btn-lg px-4" (click)="scrollTo('features')"
+              >Dowiedz się więcej ⇀</a
+            >
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </header>
 
 <!-- Features section -->
-<section class="py-5 border-bottom feedulo-fullscreen-white text-dark" id="features" #featuresSection>
-    <div class="container px-4 my-5">
-        <div class="row justify-content-center mb-4">
-            <div class="col-12 col-md-10 col-lg-8 text-center">
-                <div class="section-header">
-                    <h6>Automatyzuj feedback z <span class="logo-color">Feedulo</span></h6>
-                    <h2>Lepsza efektywność zespołu i biznesu dzięki inteligentnym rozwiązaniom.</h2>
-                    <p>
-                        Nie szukaj czasu na tworzenie dobrego feedbacku - skorzystaj z generatora i reaguj na bieżąco. 
-                        Możesz też zautomatyzować proces - przekaż rezultaty i wyślij feedback do wielu pracowników za jednym kliknięciem. 
-                        Dostosuj styl informacji zwrotnej do swoich potrzeb i stylu w firmie.
-                    </p>
-                </div>
-            </div>
+<section
+  class="py-5 border-bottom feedulo-fullscreen-white text-dark"
+  id="features"
+  #featuresSection
+>
+  <div class="container px-4 my-5">
+    <div class="row justify-content-center mb-4">
+      <div class="col-12 col-md-10 col-lg-8 text-center">
+        <div class="section-header">
+          <h6>Automatyzuj feedback z <span class="logo-color">Feedulo</span></h6>
+          <h2>Lepsza efektywność zespołu i biznesu dzięki inteligentnym rozwiązaniom.</h2>
+          <p>
+            Nie szukaj czasu na tworzenie dobrego feedbacku - skorzystaj z generatora i reaguj na
+            bieżąco. Możesz też zautomatyzować proces - przekaż rezultaty i wyślij feedback do wielu
+            pracowników za jednym kliknięciem. Dostosuj styl informacji zwrotnej do swoich potrzeb i
+            stylu w firmie.
+          </p>
         </div>
-
-        <!-- Features row 1 -->
-        <div class="row gx-4 gy-4 justify-content-center mb-3">
-            <div class="col-12 col-md-6 col-lg-4 text-center">
-                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-collection fs-3"></i></div>
-                <h4 class="fw-bolder">Szybkie przygotowanie feedbacku</h4>
-                <p class="feature-p">Manager generuje feedback za pomocą interfejsu i wysyła spersonalizowane informacje zwrotne do wielu pracowników, oszczędzając czas i eliminując opóźnienia.</p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 text-center">
-                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-building fs-3"></i></div>
-                <h4 class="fw-bolder">Pełna automatyzacja</h4>
-                <p class="feature-p">System na podstawie aktualnych rezultatów wysyła okresowe feedbacki - opcja pełnej customowej automatyzacji to pełna kontrola nad komunikacją w firmie.</p>
-            </div>
-        </div>
-
-        <!-- Features row 2 -->
-        <div class="row gx-4 gy-4 justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4 text-center">
-                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-toggles2 fs-3"></i></div>
-                <h4 class="fw-bolder">Wskazówki od managerów</h4>
-                <p class="feature-p">Feedback może zawierać wskazówki i zadania od managerów wyższego szczebla, które pozwalają zespołowi szybciej reagować i dostosowywać się do zmian rynkowych.</p>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 text-center">
-                <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-check2-circle fs-3"></i></div>
-                <h4 class="fw-bolder">Pewność odbioru i akcji</h4>
-                <p class="feature-p">Merytoryczny i wysokiej jakości feedback jest dostarczany na czas, dzięki czemu pracownicy mogą rozwijać siebie i wpływać na realny rozwój zespołu.</p>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <!-- Features row 1 -->
+    <div class="row gx-4 gy-4 justify-content-center mb-3">
+      <div class="col-12 col-md-6 col-lg-4 text-center">
+        <div class="feature custom-bg text-white rounded-3 mb-3">
+          <i class="bi bi-collection fs-3"></i>
+        </div>
+        <h4 class="fw-bolder">Szybkie przygotowanie feedbacku</h4>
+        <p class="feature-p">
+          Manager generuje feedback za pomocą interfejsu i wysyła spersonalizowane informacje
+          zwrotne do wielu pracowników, oszczędzając czas i eliminując opóźnienia.
+        </p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 text-center">
+        <div class="feature custom-bg text-white rounded-3 mb-3">
+          <i class="bi bi-building fs-3"></i>
+        </div>
+        <h4 class="fw-bolder">Pełna automatyzacja</h4>
+        <p class="feature-p">
+          System na podstawie aktualnych rezultatów wysyła okresowe feedbacki - opcja pełnej
+          customowej automatyzacji to pełna kontrola nad komunikacją w firmie.
+        </p>
+      </div>
+    </div>
+
+    <!-- Features row 2 -->
+    <div class="row gx-4 gy-4 justify-content-center">
+      <div class="col-12 col-md-6 col-lg-4 text-center">
+        <div class="feature custom-bg text-white rounded-3 mb-3">
+          <i class="bi bi-toggles2 fs-3"></i>
+        </div>
+        <h4 class="fw-bolder">Wskazówki od managerów</h4>
+        <p class="feature-p">
+          Feedback może zawierać wskazówki i zadania od managerów wyższego szczebla, które pozwalają
+          zespołowi szybciej reagować i dostosowywać się do zmian rynkowych.
+        </p>
+      </div>
+      <div class="col-12 col-md-6 col-lg-4 text-center">
+        <div class="feature custom-bg text-white rounded-3 mb-3">
+          <i class="bi bi-check2-circle fs-3"></i>
+        </div>
+        <h4 class="fw-bolder">Pewność odbioru i akcji</h4>
+        <p class="feature-p">
+          Merytoryczny i wysokiej jakości feedback jest dostarczany na czas, dzięki czemu pracownicy
+          mogą rozwijać siebie i wpływać na realny rozwój zespołu.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Contact section -->
 <section class="py-5 feedulo-fullscreen contact mt-3" #contact id="contact">
-    <div class="container px-4 px-sm-5 my-5">
-        <div class="text-center mb-5">
-            <div class="feature custom-bg text-white rounded-3 mb-3"><i class="bi bi-envelope fs-3"></i></div>
-            <h2 class="fw-bolder">Skontaktuj się z nami</h2>
-            <p class="lead mb-0">Twój biznes jest dla nas ważny</p>
-        </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-10 col-lg-6">
-                <form id="contactForm" [formGroup]="contactForm" (submit)="onSubmit()">
-                    <div class="form-group mb-3">
-                        <input 
-                            class="form-control" 
-                            id="name" 
-                            type="text" 
-                            placeholder="Imię i nazwisko"  
-                            formControlName="name"/>
-                    </div>
-                    <div class="form-group mb-3">
-                        <input 
-                            class="form-control" 
-                            id="email" type="email" placeholder="Adres email" data-sb-validations="required,email" 
-                            formControlName="email" />
-                    </div>
-                    <div class="form-group mb-3">
-                        <input 
-                            class="form-control" 
-                            id="phone" 
-                            type="tel" 
-                            placeholder="Telefon (opcjonalnie)"
-                            formControlName="phone"  />
-                    </div>
-                    <div class="form-group mb-3">
-                        <textarea 
-                            class="form-control" 
-                            id="message" 
-                            placeholder="Wpisz swoją wiadomość..." style="height: 8rem" data-sb-validations="required"
-                            formControlName="message" ></textarea>
-                    </div>
-                     @if (showConfirm()) {
-                        <div>
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">{{ showConfirm() }}</div>
-                            </div>
-                        </div>
-                     }
-                    <div class="d-grid gap-2 d-sm-flex justify-content-center flex-column flex-sm-row">
-                        <button 
-                            class="btn btn-primary btn-lg px-4"
-                            type="submit"
-                            [ngClass]="{'disabled': contactForm.invalid}"
-                            >Wyślij wiadomość
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
+  <div class="container px-4 px-sm-5 my-5">
+    <div class="text-center mb-5">
+      <div class="feature custom-bg text-white rounded-3 mb-3">
+        <i class="bi bi-envelope fs-3"></i>
+      </div>
+      <h2 class="fw-bolder">Skontaktuj się z nami</h2>
+      <p class="lead mb-0">Twój biznes jest dla nas ważny</p>
     </div>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-6">
+        <form id="contactForm" [formGroup]="contactForm" (submit)="onSubmit()">
+          <div class="form-group mb-3">
+            <input
+              class="form-control"
+              id="name"
+              type="text"
+              placeholder="Imię i nazwisko"
+              formControlName="name"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <input
+              class="form-control"
+              id="email"
+              type="email"
+              placeholder="Adres email"
+              data-sb-validations="required,email"
+              formControlName="email"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <input
+              class="form-control"
+              id="phone"
+              type="tel"
+              placeholder="Telefon (opcjonalnie)"
+              formControlName="phone"
+            />
+          </div>
+          <div class="form-group mb-3">
+            <textarea
+              class="form-control"
+              id="message"
+              placeholder="Wpisz swoją wiadomość..."
+              style="height: 8rem"
+              data-sb-validations="required"
+              formControlName="message"
+            ></textarea>
+          </div>
+          @if (showConfirm()) {
+          <div>
+            <div class="text-center mb-3">
+              <div class="fw-bolder">{{ showConfirm() }}</div>
+            </div>
+          </div>
+          }
+          <div class="d-grid gap-2 d-sm-flex justify-content-center flex-column flex-sm-row">
+            <button
+              class="btn btn-primary btn-lg px-4"
+              type="submit"
+              [ngClass]="{ disabled: contactForm.invalid }"
+            >
+              Wyślij wiadomość
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- Footer -->
 <footer class="py-4 feedulo-fullscreen-white">
-    <div class="container px-4 text-center">
-        <p class="m-0 text-dark">arek-lab &copy; Feedulo 2025</p>
-    </div>
+  <div class="container px-4 text-center">
+    <p class="m-0 text-dark">arek-lab &copy; Feedulo 2025</p>
+  </div>
 </footer>

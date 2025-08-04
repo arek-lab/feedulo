@@ -2,10 +2,10 @@
 :root {
   --logo-orange: #fb923c;
   --bg-root-color: #111827;
-  --btn-color:#4338ca;
+  --btn-color: #4338ca;
 }
 .logo-color {
-  color: var(--logo-orange)
+  color: var(--logo-orange);
 }
 /* Smooth scrolling for anchor links */
 html {
@@ -15,17 +15,16 @@ html {
 section[id] {
   scroll-margin-top: 80px;
 }
-.feedulo-fullscreen {  
-  background-image: 
-  radial-gradient(ellipse at 45% 45%, #443a50 5%, transparent 30%),
-  radial-gradient(ellipse at 30% 30%, #443a50 10%, transparent 40%),
-  linear-gradient(to top left, var(--bg-root-color), #111827);
-  min-height: 100vh;
+.feedulo-fullscreen {
+  background-image: radial-gradient(ellipse at 45% 45%, #443a50 5%, transparent 30%),
+    radial-gradient(ellipse at 30% 30%, #443a50 10%, transparent 40%),
+    linear-gradient(to top left, var(--bg-root-color), #111827);
+  height: 100%;
   width: 100%;
 }
 body {
   position: relative;
-  min-height: 82vh;
+  height: 100vh;
 }
 .btn-primary {
   background: #4338ca;
@@ -40,11 +39,12 @@ body {
   background-color: #6366f1;
 }
 .btn-ptimary:focus-visible {
- outline: 2px solid #4f46e5;
- outline-offset: 2px;
+  outline: 2px solid #4f46e5;
+  outline-offset: 2px;
 }
 
-.btn-outline-light, .btn-outline-light:hover {
+.btn-outline-light,
+.btn-outline-light:hover {
   border: none;
   outline: none;
   font-size: 0.8rem;
@@ -52,7 +52,7 @@ body {
 }
 
 .disabled {
-  background-color: var(--btn-color) !important; 
+  background-color: var(--btn-color) !important;
   opacity: 0.7;
   pointer-events: none;
   cursor: none;
