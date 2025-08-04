@@ -1,19 +1,13 @@
-form {
-  border: 0;
-  padding: 0;
-  margin: 0;
-}
 .bg-dark {
   background: var(--bg-root-color) !important;
 }
-/* Główny kontener dashboard */
+
 .dashboard-container {
   margin-top: 4rem;
   height: calc(100vh - 4rem);
   overflow: hidden;
 }
 
-/* Sidebar */
 .sidebar {
   width: 20rem;
   height: 100%;
@@ -25,7 +19,6 @@ form {
   overflow-y: auto;
 }
 
-/* Przycisk toggle sidebar */
 .sidebar-toggle {
   position: absolute;
   top: 0.5rem;
@@ -48,14 +41,12 @@ form {
   transform: scale(1.05);
 }
 
-/* Główna przestrzeń robocza */
 .main-content {
   flex: 2;
   height: 100%;
   transition: margin-left 0.3s ease;
 }
 
-/* Górna i dolna sekcja przestrzeni roboczej */
 .workspace-top,
 .workspace-bottom {
   border: 1px solid #dfe6f565;
@@ -72,7 +63,6 @@ form {
   height: 40%;
 }
 
-/* Overlay dla małych ekranów */
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -91,7 +81,6 @@ form {
   visibility: visible;
 }
 
-/* Responsywność */
 @media (max-width: 991.98px) {
   .sidebar {
     position: fixed;
@@ -162,7 +151,6 @@ form {
   }
 }
 
-/* colors of feedback */
 .rainbow-box {
   background: linear-gradient(
     90deg,
@@ -241,7 +229,6 @@ input[type='radio'] {
   }
 }
 
-/* //////////////////// FORM */
 input,
 select {
   border: none;
