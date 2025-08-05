@@ -46,14 +46,20 @@ export class NavbarComponent {
   }
 
   scrollTo(place: string): void {
-    const contactElement = document.querySelector(`#${place}`);
-    if (contactElement) {
-      contactElement.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-      this.closeMenu()
+    const currentUrl = this.router.url;
+
+    if (currentUrl === '/' || currentUrl.startsWith('/home')) {
+      const scrollElement = document.querySelector(`#${place}`);
+      if (scrollElement) {
+        scrollElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+        this.closeMenu();
+      }
+    } else {
+      this.router.navigate(['/home'], { fragment: place });
+      this.closeMenu();
     }
   }
 }
-

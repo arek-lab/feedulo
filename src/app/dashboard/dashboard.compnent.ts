@@ -6,16 +6,21 @@ import {
   ViewChild,
   AfterViewInit,
   signal,
+  inject,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil, debounceTime } from 'rxjs/operators';
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { StorageService } from '../services/storage.service';
+import { message } from '../services/message-model';
+import { HttpService } from '../services/http.service';
+import { ChatResponseComponent } from '../chat-response/chat-response.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, ChatResponseComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
@@ -32,6 +37,8 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   showOpeningSentence = signal(false);
   showClosingSentence = signal(false);
   showMoreOptions = signal(false);
+  storageService = inject(StorageService);
+  httpService = inject(HttpService);
 
   private destroy$ = new Subject<void>();
   private readonly BREAKPOINT_LG = 992;
@@ -137,9 +144,8 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onSubmit() {
-    // this.storageService.messageDetails.set(this.formData.value as message);
-    //     this.httpService.connectGPT(this.formData.value as message);
-    //     this.router.navigate(['/feedback']);
+    this.storageService.messageDetails.set(this.formData.value as message);
+    this.httpService.connectGPT(this.formData.value as message);
     console.log(this.formData.value);
   }
 

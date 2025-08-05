@@ -50,6 +50,7 @@
 .workspace-top,
 .workspace-bottom {
   border: 1px solid #dfe6f565;
+  height: 50%;
   border-left: none;
   border-right: none;
   overflow-y: auto;
@@ -57,11 +58,11 @@
 
 .workspace-top {
   border-bottom: none;
-  height: 60%;
+  /* height: 60%; */
 }
-.workspace-bottom {
+/* .workspace-bottom {
   height: 40%;
-}
+} */
 
 .sidebar-overlay {
   position: fixed;
