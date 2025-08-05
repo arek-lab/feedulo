@@ -27,13 +27,7 @@ export class ChatResponseComponent {
     'Konformistyczny Bursztyn',
     'Impulsywna Czerwień',
   ];
-  sensitivityList = [
-    'bardzo niska',
-    'niska',
-    'średnia',
-    'wysoka',
-    'bardzo wysoka',
-  ];
+  sensitivityList = ['bardzo niska', 'niska', 'średnia', 'wysoka', 'bardzo wysoka'];
   historicalList = ['<80%', '80%-100%', 'ok 100%', '100% - 120%', '>120%'];
   managementColor = signal('');
   developmentActivities = signal<any>([]);
@@ -44,15 +38,9 @@ export class ChatResponseComponent {
       () => {
         this.messageDetails = this.storageService.messageDetails;
         this.productList = this.messageDetails()?.productResults || [];
-        this.isProduct =
-          this.productList[0]?.product !== '' &&
-          this.productList[0]?.result !== '';
-        this.managementColor.set(
-          this.colorsList[+this.messageDetails()?.colors! - 1]
-        );
-        this.developmentActivities.set(
-          this.messageDetails()?.developmentActivities
-        );
+        this.isProduct = this.productList[0]?.product !== '' && this.productList[0]?.result !== '';
+        this.managementColor.set(this.colorsList[+this.messageDetails()?.colors! - 1]);
+        this.developmentActivities.set(this.messageDetails()?.developmentActivities);
       },
       { allowSignalWrites: true }
     );
@@ -62,11 +50,14 @@ export class ChatResponseComponent {
     navigator.clipboard
       .writeText(this.chatResponse()?.feedback as string)
       .then(() => (this.copied = true))
-      .catch((err) => alert('Nie udało się skopiować'));
+      .catch(err => alert('Nie udało się skopiować'));
   }
 
   editMode() {
     this.storageService.isEditingMode.set(true);
-    this.router.navigate(['dashboard']);
+    this.storageService.showResponse.set(false);
+  }
+  newMode() {
+    this.storageService.showResponse.set(false);
   }
 }

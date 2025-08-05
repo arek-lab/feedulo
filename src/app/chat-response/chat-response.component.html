@@ -74,21 +74,18 @@
       <div class="col-2"></div>
       <div class="col-8">
         <ul class="list-group list-group-flush">
-          @if (isProduct){ @for(i of messageDetails()?.productResults; track
-          $index) {
+          @if (isProduct){ @for(i of messageDetails()?.productResults; track $index) {
           <li class="list-group-item">
-            product: {{ i.product }}, realizacja: {{ i.result }}%, informacje:
-            {{ i.additional === "" ? "brak" : i.additional }}
+            zadanie: {{ i.product }}, efekt: {{ i.result }}%, informacje:
+            {{ i.additional === '' ? 'brak' : i.additional }}
           </li>
           }
           <li class="list-group-item">
-            <span>wrażliwość na realizację</span>
+            <span>wrażliwość na efekt</span>
             <span>{{ sensitivityList[+messageDetails()?.sensitivity!] }}</span>
           </li>
           } @else {
-          <li class="list-group-item">
-            Brak minimum jednego produktu do oceny
-          </li>
+          <li class="list-group-item">Brak minimum jednego produktu do oceny</li>
           } @if(messageDetails()?.ignoreHistorical) {
           <li class="list-group-item">
             <span>wyniki historyczne</span
@@ -105,17 +102,11 @@
           </li>
           } @if(messageDetails()?.openingSentence) {
           <li class="list-group-item">
-            <span
-              >Propozycja rozpoczęcia feedbacku:
-              {{ messageDetails()!.openingSentence }}</span
-            >
+            <span>Propozycja rozpoczęcia feedbacku: {{ messageDetails()!.openingSentence }}</span>
           </li>
           } @if(messageDetails()?.closingSentence) {
           <li class="list-group-item">
-            <span
-              >Propozycja zakończenia feedbacku:
-              {{ messageDetails()!.closingSentence }}</span
-            >
+            <span>Propozycja zakończenia feedbacku: {{ messageDetails()!.closingSentence }}</span>
           </li>
           }
           <li class="list-group-item">
@@ -153,18 +144,12 @@
     <div class="col-2"></div>
     <div class="col-4">
       <div class="row p-1">
-        <button
-          class="btn btn-outline-light btn-dark"
-          type="button"
-          routerLink="/dashboard"
-        >
-          nowy
-        </button>
+        <button class="btn btn-primary" type="button">nowy</button>
       </div>
     </div>
     <div class="col-4">
       <div class="row p-1">
-        <button class="btn btn-dark" type="button" (click)="editMode()">
+        <button class="btn btn-outline-light" type="button" (click)="editMode()">
           spróbuj ponownie
         </button>
       </div>

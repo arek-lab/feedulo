@@ -39,6 +39,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   showMoreOptions = signal(false);
   storageService = inject(StorageService);
   httpService = inject(HttpService);
+  showResponse = this.storageService.showResponse;
 
   private destroy$ = new Subject<void>();
   private readonly BREAKPOINT_LG = 992;
@@ -146,6 +147,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   onSubmit() {
     this.storageService.messageDetails.set(this.formData.value as message);
     this.httpService.connectGPT(this.formData.value as message);
+    this.storageService.showResponse.set(true);
     console.log(this.formData.value);
   }
 

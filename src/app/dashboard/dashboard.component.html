@@ -32,7 +32,7 @@
                   min="0"
                   max="4"
                   step="1"
-                  [value]
+                  [value]="2"
                   name="sensitivity"
                   id="sensitivity"
                   formControlName="sensitivity"
@@ -335,7 +335,10 @@
     <!-- Główna przestrzeń robocza -->
     <div class="main-content flex-fill bg-dark" #mainContent>
       <!-- Górna sekcja (60% wysokości) -->
-      <div class="workspace-top bg-dark text-center">
+      <div
+        class="workspace-top bg-dark text-center"
+        [style.height]="!showResponse() ? '85%' : '15%'"
+      >
         <div class="workspace-header mb-3 mt-3 mb-5">Dostosuj parametry</div>
         <div class="cue-info mb-2 text-start mt-3 ms-3">Wybierz swój styl zarządzania</div>
 
@@ -479,8 +482,11 @@
         </div>
       </div>
 
-      <!-- Dolna sekcja (40% wysokości) -->
-      <div class="workspace-bottom bg-dark text-center">
+      <!-- Dolna sekcja -->
+      <div
+        class="workspace-bottom bg-dark text-center"
+        [style.height]="showResponse() ? '80%' : '35'"
+      >
         <div class="workspace-header"><app-chat-response /></div>
       </div>
     </div>

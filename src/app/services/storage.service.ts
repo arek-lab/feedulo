@@ -14,5 +14,5 @@ export class StorageService {
   } | null>(null);
   credits = this.chatResponse()?.credits;
   isEditingMode = signal(false);
-  constructor() {}
+  showResponse = signal(false)
 }

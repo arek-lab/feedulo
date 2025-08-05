@@ -50,19 +50,15 @@
 .workspace-top,
 .workspace-bottom {
   border: 1px solid #dfe6f565;
-  height: 50%;
   border-left: none;
   border-right: none;
   overflow-y: auto;
+  transition: all 0.3s ease-in-out;
 }
 
 .workspace-top {
   border-bottom: none;
-  /* height: 60%; */
 }
-/* .workspace-bottom {
-  height: 40%;
-} */
 
 .sidebar-overlay {
   position: fixed;
@@ -254,7 +250,7 @@ textarea {
   background-color: transparent;
 }
 textarea::placeholder {
-  font-size: smaller;
+  font-size: 0, 8rem;
   color: #dee2e6bb;
 }
 input[type='text']:focus,
@@ -270,13 +266,18 @@ select:focus {
 input[type='text']::-webkit-input-placeholder,
 input[type='number']::-webkit-input-placeholder,
 select.ng-invalid {
-  font-size: smaller;
-  color: #dee2e6bb;
+  font-size: 0.8rem;
+  color: #dee2e69a;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, color 600000s 0s;
 }
+input,
+input:focus {
+  font-size: 0.9rem;
+}
+
 svg {
   width: 1.5rem;
   height: 1.5rem;
