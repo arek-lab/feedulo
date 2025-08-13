@@ -16,20 +16,19 @@ export class AuthService {
   private storageService = inject(StorageService);
   private apiDomain = environment.apiUrl;
 
-  private currentUser: User | null = null;
+  currentUser = signal<User | null>(null);
 
   async loadUser(): Promise<void> {
     try {
       const res = await firstValueFrom(
-        this.http.get<{ user: User; credits: number }>(
-          this.apiDomain + 'users/showMe',
-          {
-            withCredentials: true,
-          }
-        )
+        this.http.get<{ user: User; credits: number }>(this.apiDomain + 'users/showMe', {
+          withCredentials: true,
+        })
       );
-      this.currentUser = res.user;
-      this.storageService.chatResponse.update((prev) => {
+
+      this.currentUser.set(new User(res.user.name, res.user.id, res.user.role));
+
+      this.storageService.chatResponse.update(prev => {
         return {
           feedback: '',
           prompt_tokens: 0,
@@ -38,24 +37,17 @@ export class AuthService {
         };
       });
     } catch (e) {
-      this.currentUser = null;
+      this.currentUser.set(null);
     }
-  }
-
-  isLoggedIn(): boolean {
-    return !!this.currentUser;
   }
 
   signUp(email: string, password: string, name: string) {
     return this.http
-      .post<{ user: User; credits: number } | string>(
-        this.apiDomain + 'auth/register',
-        {
-          email,
-          password,
-          name,
-        }
-      )
+      .post<{ user: User; credits: number } | string>(this.apiDomain + 'auth/register', {
+        email,
+        password,
+        name,
+      })
       .pipe(catchError(this.handleError));
   }
   logIn(email: string, password: string) {
@@ -72,7 +64,7 @@ export class AuthService {
   }
 
   logout() {
-    this.storageService.chatResponse.update((prev) => {
+    this.storageService.chatResponse.update(prev => {
       return {
         feedback: '',
         prompt_tokens: 0,
@@ -99,9 +91,9 @@ export class AuthService {
   private setUser(resObj: { user: User; credits: number } | string) {
     if (typeof resObj === 'string') return;
     const { name, id, role } = resObj.user;
-    this.currentUser = new User(name, id, role);
-    this.user.set(this.currentUser);
-    this.storageService.chatResponse.update((prev) => {
+    this.currentUser.set(new User(name, id, role));
+    this.user.set(this.currentUser());
+    this.storageService.chatResponse.update(prev => {
       return {
         feedback: '',
         prompt_tokens: 0,

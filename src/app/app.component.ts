@@ -15,9 +15,10 @@ import { LoaderComponent } from './loader/loader.component';
 export class AppComponent {
   title = 'feedback-generator';
   private httpService = inject(HttpService);
+  private authService = inject(AuthService);
   loading = this.httpService.autoLogLoading;
 
-  constructor() {
-    this.httpService.getUser();
+  ngOnInit() {
+    this.authService.loadUser();
   }
 }

@@ -32,12 +32,12 @@ export class HttpService {
         credits: number;
       }>(this.apiDomain + 'chat', { ...body }, { withCredentials: true })
       .subscribe({
-        next: (res) => {
+        next: res => {
           this.storageService.chatResponse.set(res);
           this.loadingFeedback.set(false);
           return res;
         },
-        error: (err) => {
+        error: err => {
           const errMessage =
             'Niestety nie możemy obecnie zrealizować tej usługi. Spróbuj ponownie później';
           this.storageService.chatResponse.set({
@@ -50,24 +50,7 @@ export class HttpService {
       });
   }
 
-  getUser() {
-    this.autoLogLoading.set(true);
-    this.http
-      .get<User>(this.apiDomain + 'users/showMe', { withCredentials: true })
-      .subscribe({
-        next: (res) => {
-          this.authService.user.set(res);
-          this.autoLogLoading.set(false);
-          return null;
-        },
-        error: (err) => {
-          this.autoLogLoading.set(false);
-        },
-      });
-  }
-
-  sendContactMessage(customerMessage: contactMessage){
-    return this.http
-      .post<contactMessage>(this.apiDomain + 'contact', customerMessage)
+  sendContactMessage(customerMessage: contactMessage) {
+    return this.http.post<contactMessage>(this.apiDomain + 'contact', customerMessage);
   }
 }

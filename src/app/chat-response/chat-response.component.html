@@ -1,4 +1,149 @@
-<div class="row ps-5 pe-5 m-0 mt-5">
+<div class="container-fluid px-3 px-md-5 mt-5">
+  <div class="row mt-3 align-items-center">
+    <div class="col-12 d-flex flex-wrap justify-content-between">
+      <p class="mb-2 mt-2 mb-md-0">Propozycja feedbacku</p>
+      <div class="icon d-flex align-items-center pb-2">
+        @if (!copied) {
+        <svg
+          (click)="copyToClipboard()"
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-copy"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z"
+          />
+        </svg>
+        } @else {
+        <span class="me-2">skopiowane</span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-check2"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"
+          />
+        </svg>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="row p-2 feedback">
+    @if (isLoading()) {
+    <div class="col-12 mt-3">
+      <p class="placeholder-glow"><span class="placeholder col-12 placeholder-lg"></span></p>
+    </div>
+    <div class="col-12">
+      <p class="placeholder-glow"><span class="placeholder col-12 placeholder-lg"></span></p>
+    </div>
+    <div class="col-12">
+      <p class="placeholder-glow"><span class="placeholder col-12 placeholder-lg"></span></p>
+    </div>
+    } @else {
+    <div class="col-12 feedback-content">
+      {{ chatResponse()?.feedback }}
+    </div>
+    }
+  </div>
+
+  <div class="row p-2 mt-3">
+    <div class="col-12">
+      <p>Twoje parametry</p>
+    </div>
+
+    <div class="col-12 col-md-8 offset-md-2">
+      <ul class="list-group list-group-flush">
+        @if (isProduct) { @for(i of messageDetails()?.productResults; track $index) {
+        <li class="list-group-item">
+          zadanie: {{ i.product }}, efekt: {{ i.result }}, informacje:
+          {{ i.additional === '' ? 'brak' : i.additional }}
+        </li>
+        }
+        <li class="list-group-item">
+          <span>wrażliwość na efekt</span>
+          <span>{{ sensitivityList[+messageDetails()?.sensitivity!] }}</span>
+        </li>
+        } @else {
+        <li class="list-group-item">Brak minimum jednego produktu do oceny</li>
+        } @if(messageDetails()?.ignoreHistorical) {
+        <li class="list-group-item">
+          <span>wyniki historyczne</span>
+          <span>{{ historicalList[+messageDetails()?.historical!] }}</span>
+        </li>
+        } @if(developmentActivities()?.length > 0) {
+        <li class="list-group-item">
+          Propozycje działań rozwojowych
+          <ol class="list-group list-group-numbered list-group-flush">
+            @for(activity of developmentActivities(); track $index){
+            <li class="list-group-item">{{ activity }}</li>
+            }
+          </ol>
+        </li>
+        } @if(messageDetails()?.openingSentence) {
+        <li class="list-group-item">
+          <span>Propozycja rozpoczęcia feedbacku: {{ messageDetails()!.openingSentence }}</span>
+        </li>
+        } @if(messageDetails()?.closingSentence) {
+        <li class="list-group-item">
+          <span>Propozycja zakończenia feedbacku: {{ messageDetails()!.closingSentence }}</span>
+        </li>
+        }
+
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Liczba wyrazów feedbacku</span>
+          <span>{{ messageDetails()?.numberOfWords }}</span>
+        </li>
+
+        @if(messageDetails()?.emotions) {
+        <li class="list-group-item">
+          <span>Emocje</span>
+          <span>{{ messageDetails()?.emotions }}</span>
+        </li>
+        } @if(messageDetails()?.moreInfos) {
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Dodatkowe informacje</span>
+          <span>{{ messageDetails()?.moreInfos }}</span>
+        </li>
+        }
+
+        <li class="list-group-item">
+          <span>Kolor stylu pracy</span>
+          <span>{{ managementColor() }}</span>
+        </li>
+        <li class="list-group-item">
+          <span>Input tokens</span>
+          <span>{{ chatResponse()?.prompt_tokens }}</span>
+        </li>
+        <li class="list-group-item">
+          <span>Output tokens</span>
+          <span>{{ chatResponse()?.completion_tokens }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row mt-5 g-2">
+    <div class="col-12 col-md-6 d-grid">
+      <button class="btn btn-primary" type="button">nowy</button>
+    </div>
+    <div class="col-12 col-md-6 d-grid">
+      <button class="btn btn-outline-light" type="button" (click)="editMode()">
+        spróbuj ponownie
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row ps-5 pe-5 m-0 mt-5">
   <div class="row mt-3">
     <div class="col-12 d-flex justify-content-between">
       <p>Propozycja feedbacku</p>
@@ -156,4 +301,4 @@
     </div>
     <div class="col-2"></div>
   </div>
-</div>
+</div> -->

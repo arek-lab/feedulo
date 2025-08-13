@@ -1,7 +1,7 @@
 export interface message {
-  sensitivity: string | null;
+  sensitivity: number | null;
   ignoreSensitivity: boolean | null;
-  historical: string | null;
+  historical: number | null;
   ignoreHistorical: false;
   productResults: {
     product: string | null;
@@ -11,8 +11,8 @@ export interface message {
   developmentActivities: string[];
   openingSentence: string | null;
   closingSentence: string | null;
-  colors: string | null;
+  colors: number | null;
   emotions: string | null;
   moreInfos: string | null;
-  numberOfWords: string | null;
+  numberOfWords: number | null;
 }

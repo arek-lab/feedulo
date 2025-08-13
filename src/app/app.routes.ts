@@ -14,15 +14,6 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
-  },
-  // {
-  //   path: 'dashboard',
-  //   component: DashboardComponent,
-  //   canActivate: [authGuard],
-  // },
-  {
-    path: 'feedback',
-    component: ChatResponseComponent,
     canActivate: [authGuard],
   },
   { path: 'auth/:type', component: AuthComponent },

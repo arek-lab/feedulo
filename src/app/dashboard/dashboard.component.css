@@ -134,6 +134,7 @@
 @keyframes moveRight {
   0% {
     width: 25rem;
+    overflow: hidden;
   }
   100% {
     width: 0;
@@ -230,6 +231,10 @@ input,
 select {
   border: none;
   background: inherit;
+  color: inherit;
+}
+textarea {
+  color: inherit;
 }
 input[type='text']:not(:focus),
 input[type='number']:not(:focus),
@@ -237,6 +242,7 @@ select:not(:focus) {
   border-top: 0.8px solid transparent;
   border-bottom: 0.8px solid transparent;
   border-radius: 0;
+  color: inherit;
 }
 
 input[type='text']:hover,

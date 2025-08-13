@@ -26,3 +26,13 @@ span {
   font-weight: 300;
   margin-right: 0.1rem;
 }
+@media (max-width: 768px) {
+  .feedback-content {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 576px) {
+  .feedback-content {
+    font-size: 0.8rem;
+  }
+}

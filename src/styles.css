@@ -3,6 +3,7 @@
   --logo-orange: #fb923c;
   --bg-root-color: #111827;
   --btn-color: #4338ca;
+  --btn-color-inactive: #4438ca96;
 }
 .logo-color {
   color: var(--logo-orange);
@@ -38,7 +39,7 @@ body {
 .btn-primary:hover {
   background-color: #6366f1;
 }
-.btn-ptimary:focus-visible {
+.btn-primary:focus-visible {
   outline: 2px solid #4f46e5;
   outline-offset: 2px;
 }
@@ -51,9 +52,9 @@ body {
   align-self: center;
 }
 
-.disabled {
-  background-color: var(--btn-color) !important;
-  opacity: 0.7;
+.inactive {
+  background-color: var(--btn-color-inactive) !important;
+  color: #fefefeb5;
   pointer-events: none;
   cursor: none;
 }

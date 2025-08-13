@@ -169,7 +169,7 @@
                 <label for="openingSentence" class="visually-hidden">openingSentence</label>
                 <input
                   type="text"
-                  class="form-control dark"
+                  class="form-control"
                   id="openingSentence"
                   placeholder="Początek feedbacku"
                   formControlName="openingSentence"
@@ -337,7 +337,7 @@
       <!-- Górna sekcja (60% wysokości) -->
       <div
         class="workspace-top bg-dark text-center"
-        [style.height]="!showResponse() ? '85%' : '15%'"
+        [style.height]="!showResponse() ? '100%' : '0%'"
       >
         <div class="workspace-header mb-3 mt-3 mb-5">Dostosuj parametry</div>
         <div class="cue-info mb-2 text-start mt-3 ms-3">Wybierz swój styl zarządzania</div>
@@ -436,7 +436,7 @@
               <label for="additional" class="visually-hidden">additional</label>
               <input
                 type="text"
-                class="form-control"
+                class="form-control dark"
                 id="additional"
                 placeholder="dodatkowe uwagi (opcjonalnie)"
                 formControlName="additional"
@@ -462,7 +462,27 @@
           </div>
           }
         </ng-container>
-        <div class="container mt-5 mb-3">
+        <div class="row mt-5 g-2 justify-content-center px-3">
+          <div class="col-12 col-sm-auto">
+            <button
+              class="btn btn-primary w-100 w-md-auto px-5"
+              type="submit"
+              [ngClass]="{ inactive: formData.invalid }"
+            >
+              generuj feedback
+            </button>
+          </div>
+          <div class="col-12 col-sm-auto">
+            <div
+              class="btn btn-outline-light w-100 w-md-auto px-5"
+              type="button"
+              (click)="onClear()"
+            >
+              wyczyść
+            </div>
+          </div>
+        </div>
+        <!-- <div class="container mt-5 mb-3">
           <div class="row justify-content-center gx-3 gy-3 px-3">
             <div class="col-12 col-sm-5 col-md-4">
               <button
@@ -479,13 +499,13 @@
               </button>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <!-- Dolna sekcja -->
       <div
         class="workspace-bottom bg-dark text-center"
-        [style.height]="showResponse() ? '80%' : '35'"
+        [style.height]="showResponse() ? '100%' : '0%'"
       >
         <div class="workspace-header"><app-chat-response /></div>
       </div>

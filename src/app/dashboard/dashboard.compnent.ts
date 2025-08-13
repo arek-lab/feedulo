@@ -45,9 +45,9 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   private readonly BREAKPOINT_LG = 992;
 
   formData = new FormGroup({
-    sensitivity: new FormControl('2'),
+    sensitivity: new FormControl(2),
     ignoreSensitivity: new FormControl(false),
-    historical: new FormControl('2'),
+    historical: new FormControl(2),
     ignoreHistorical: new FormControl(false),
     productResults: new FormArray([
       new FormGroup({
@@ -61,10 +61,10 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     developmentActivities: new FormArray<FormControl<string>>([]),
     openingSentence: new FormControl(''),
     closingSentence: new FormControl(''),
-    colors: new FormControl<string>('3'),
+    colors: new FormControl('3'),
     emotions: new FormControl(''),
     moreInfos: new FormControl(''),
-    numberOfWords: new FormControl('100'),
+    numberOfWords: new FormControl(100),
   });
   productResults = this.formData.get('productResults') as FormArray;
   developmentActivities = this.formData.get('developmentActivities') as FormArray;
@@ -148,7 +148,6 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     this.storageService.messageDetails.set(this.formData.value as message);
     this.httpService.connectGPT(this.formData.value as message);
     this.storageService.showResponse.set(true);
-    console.log(this.formData.value);
   }
 
   onAddInputs() {

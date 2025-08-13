@@ -1,7 +1,7 @@
 <div class="row mt-5 justify-content-center py-5">
   <div class="col-12 col-sm-10 col-md-8 col-lg-6 mt-5 auth px-3 px-sm-0">
     @if (isLoading()) {
-    <div class="container"><app-loader /></div>
+    <div class="loader-container"><app-loader /></div>
     } @if (inactiveProfile()) {
     <app-info
       (click)="inactiveProfile.set(false)"
