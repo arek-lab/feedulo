@@ -7,14 +7,13 @@ import { Router, RouterLink } from '@angular/router';
 @Component({
   selector: 'app-chat-response',
   standalone: true,
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './chat-response.component.html',
   styleUrl: './chat-response.component.css',
 })
 export class ChatResponseComponent {
   private httpService = inject(HttpService);
   private storageService = inject(StorageService);
-  private router = inject(Router);
   chatResponse = this.storageService.chatResponse;
   isLoading = this.httpService.loadingFeedback;
   messageDetails = this.storageService.messageDetails;
@@ -56,8 +55,11 @@ export class ChatResponseComponent {
   editMode() {
     this.storageService.isEditingMode.set(true);
     this.storageService.showResponse.set(false);
+    this.storageService.chatResponse.set(null);
   }
   newMode() {
     this.storageService.showResponse.set(false);
+    this.storageService.messageDetails.set(null);
+    this.storageService.chatResponse.set(null);
   }
 }
