@@ -36,72 +36,51 @@
         <li class="nav-item">
           <a class="nav-link" (click)="scrollTo('contact')">Kontakt</a>
         </li>
-        }
-      </ul>
-
-      <!-- Right side navigation - User actions -->
-      <ul class="navbar-nav ms-auto">
-        <!-- Dashboard link for logged users -->
-        @if(user()){
-        <li class="nav-item dropdown">
+        } @if(user()){
+        <li class="nav-item mt-2">
           <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
+            class="nav-link"
+            routerLink="/dashboard"
+            routerLinkActive="active"
+            (click)="closeMenu()"
           >
-            <i class="bi bi-person-circle me-1"></i>
-            Moje konto
+            <!-- <i class="bi bi-speedometer2 me-3"></i> -->
+            Dashboard
           </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li>
-              <a
-                class="dropdown-item"
-                routerLink="/dashboard"
-                routerLinkActive="active"
-                (click)="closeMenu()"
-              >
-                <i class="bi bi-speedometer2 me-2"></i>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a
-                class="dropdown-item"
-                routerLink="/history"
-                routerLinkActive="active"
-                (click)="closeMenu()"
-              >
-                <i class="bi bi-clock-history me-2"></i>
-                Historia
-              </a>
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a
-                class="dropdown-item"
-                routerLink="/settings"
-                routerLinkActive="active"
-                (click)="closeMenu()"
-              >
-                <i class="bi bi-gear me-2"></i>
-                Ustawienia
-              </a>
-            </li>
-            <li><hr class="dropdown-divider" /></li>
-            <li>
-              <a class="dropdown-item" (click)="logout()" (click)="closeMenu()">
-                <i class="bi bi-box-arrow-right me-2"></i>
-                Wyloguj
-              </a>
-            </li>
-          </ul>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/history" routerLinkActive="active" (click)="closeMenu()">
+            <!-- <i class="bi bi-clock-history me-2"></i> -->
+            Historia</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/settings"
+            routerLinkActive="active"
+            (click)="closeMenu()"
+          >
+            <!-- <i class="bi bi-gear me-2"></i> -->
+            Ustawienia</a
+          >
+        </li>
+        <li class="nav-item mt-4">
+          <a class="nav-link" (click)="logout()">
+            <i class="bi bi-box-arrow-right me-2"></i>
+            Wyloguj</a
+          >
+        </li>
+
         }@else {
         <!-- CTA buttons for non-logged users -->
         <li class="nav-item me-2">
-          <a class="nav-link" routerLink="/auth/in" routerLinkActive="active" (click)="closeMenu()">
+          <a
+            class="nav-link"
+            routerLink="/dashboard"
+            routerLinkActive="active"
+            (click)="closeMenu()"
+          >
             Zaloguj się
           </a>
         </li>

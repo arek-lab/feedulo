@@ -12,7 +12,7 @@ export class StorageService {
     completion_tokens: number;
     credits: number;
   } | null>(null);
-  credits = this.chatResponse()?.credits;
+  credits = signal(0);
   isEditingMode = signal(false);
-  showResponse = signal(false)
+  showResponse = signal(false);
 }

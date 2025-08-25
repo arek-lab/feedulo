@@ -3,7 +3,6 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
-import { AuthService } from './auth/auth.service';
 import { APP_INIT_PROVIDER } from './app.initializer';
 
 export const appConfig: ApplicationConfig = {

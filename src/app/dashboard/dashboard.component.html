@@ -339,7 +339,12 @@
         class="workspace-top bg-dark text-center"
         [style.height]="!showResponse() ? '100%' : '0%'"
       >
-        <div class="workspace-header mb-3 mt-3 mb-5">Dostosuj parametry</div>
+        <div
+          class="workspace-header mb-3 mt-3 mb-5 d-flex justify-content-between align-items-center"
+        >
+          <div class="flex-grow-1">Dostosuj parametry</div>
+          <span class="me-2"> {{ credits() }} <i class="bi bi-coin"></i></span>
+        </div>
         <div class="cue-info mb-2 text-start mt-3 ms-3">Wybierz swój styl zarządzania</div>
 
         <div class="d-flex justify-content-center align-items-center p-2 container-md flex-wrap">

@@ -17,8 +17,4 @@ export class AppComponent {
   private httpService = inject(HttpService);
   private authService = inject(AuthService);
   loading = this.httpService.autoLogLoading;
-
-  ngOnInit() {
-    this.authService.loadUser();
-  }
 }

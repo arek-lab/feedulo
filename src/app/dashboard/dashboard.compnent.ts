@@ -37,10 +37,10 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   showOpeningSentence = signal(false);
   showClosingSentence = signal(false);
   showMoreOptions = signal(false);
-  storageService = inject(StorageService);
-  httpService = inject(HttpService);
+  private storageService = inject(StorageService);
+  private httpService = inject(HttpService);
   showResponse = this.storageService.showResponse;
-
+  credits = this.storageService.credits;
   private destroy$ = new Subject<void>();
   private readonly BREAKPOINT_LG = 992;
 

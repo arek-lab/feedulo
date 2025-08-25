@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://fb-gen-f4e515611b6b.herokuapp.com/api/v1/',
+  apiUrl: ' https://feedulo-server-2d269f65ef4d.herokuapp.com/',
 };

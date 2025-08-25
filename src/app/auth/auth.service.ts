@@ -27,7 +27,7 @@ export class AuthService {
       );
 
       this.currentUser.set(new User(res.user.name, res.user.id, res.user.role));
-
+      this.storageService.credits.set(res.credits);
       this.storageService.chatResponse.update(prev => {
         return {
           feedback: '',

@@ -16,15 +16,17 @@ export class NavbarComponent {
   private authService = inject(AuthService);
   private storageService = inject(StorageService);
   private router = inject(Router);
-  user = signal<User | null>(null);
+  user = this.authService.currentUser;
   llmResponse = this.storageService.chatResponse;
   @ViewChild('navbarCollapse', { static: true }) navbarCollapse!: ElementRef;
 
   constructor() {
-    effect(() => {
-      this.user = this.authService.user;
-      this.llmResponse = this.storageService.chatResponse;
-    });
+    effect(
+      () => {
+        this.llmResponse = this.storageService.chatResponse;
+      },
+      { allowSignalWrites: true }
+    );
   }
 
   closeMenu() {
@@ -38,6 +40,9 @@ export class NavbarComponent {
     this.authService.logout().subscribe({
       next: () => {
         this.router.navigate(['auth', 'in']);
+        this.authService.user.set(null);
+        this.authService.loadUser();
+        this.closeMenu();
       },
       error: err => {
         console.log(err);

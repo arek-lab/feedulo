@@ -34,6 +34,7 @@ export class HttpService {
       .subscribe({
         next: res => {
           this.storageService.chatResponse.set(res);
+          this.storageService.credits.set(this.storageService.chatResponse()?.credits as number);
           this.loadingFeedback.set(false);
           return res;
         },

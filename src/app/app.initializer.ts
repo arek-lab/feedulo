@@ -1,4 +1,3 @@
-// app.initializer.ts
 import { APP_INITIALIZER, Provider } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 
