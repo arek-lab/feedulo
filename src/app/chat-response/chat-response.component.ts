@@ -1,4 +1,4 @@
-import { Component, effect, inject, signal } from '@angular/core';
+import { Component, effect, inject, output, signal } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { StorageService } from '../services/storage.service';
 import { JsonPipe } from '@angular/common';
@@ -31,6 +31,7 @@ export class ChatResponseComponent {
   managementColor = signal('');
   developmentActivities = signal<any>([]);
   copied = false;
+  triggerDasboard = output<void>();
 
   constructor() {
     effect(
@@ -43,6 +44,10 @@ export class ChatResponseComponent {
       },
       { allowSignalWrites: true }
     );
+  }
+
+  notifyParent() {
+    this.triggerDasboard.emit();
   }
 
   copyToClipboard() {
