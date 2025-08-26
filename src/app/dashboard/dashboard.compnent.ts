@@ -64,7 +64,7 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
     colors: new FormControl('3'),
     emotions: new FormControl(''),
     moreInfos: new FormControl(''),
-    numberOfWords: new FormControl(100),
+    numberOfWords: new FormControl('100'),
   });
   productResults = this.formData.get('productResults') as FormArray;
   developmentActivities = this.formData.get('developmentActivities') as FormArray;
@@ -161,7 +161,33 @@ export class DashboardComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   onClear() {
-    this.formData.reset();
+    this.formData.patchValue({
+      sensitivity: 2,
+      ignoreSensitivity: false,
+      historical: 2,
+      ignoreHistorical: false,
+      openingSentence: '',
+      closingSentence: '',
+      colors: '3',
+      emotions: '',
+      moreInfos: '',
+      numberOfWords: '100',
+    });
+
+    const productResultsArray = this.formData.get('productResults') as FormArray;
+    productResultsArray.clear();
+    productResultsArray.push(
+      new FormGroup({
+        product: new FormControl('', {
+          validators: [Validators.required, Validators.minLength(3)],
+        }),
+        result: new FormControl('', Validators.required),
+        additional: new FormControl(''),
+      })
+    );
+
+    const devActivitiesArray = this.formData.get('developmentActivities') as FormArray;
+    devActivitiesArray.clear();
   }
 
   sensitivityChange(event: any) {

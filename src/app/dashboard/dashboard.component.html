@@ -337,7 +337,7 @@
       <!-- Górna sekcja (60% wysokości) -->
       <div
         class="workspace-top bg-dark text-center"
-        [style.height]="!showResponse() ? '99.5%' : '0.5%'"
+        [style.height]="!showResponse() ? '100%' : '0%'"
       >
         <div
           class="workspace-header mb-3 mt-3 mb-5 d-flex justify-content-between align-items-center"
@@ -510,7 +510,7 @@
       <!-- Dolna sekcja -->
       <div
         class="workspace-bottom bg-dark text-center"
-        [style.height]="showResponse() ? '99.5%' : '0.5%'"
+        [style.height]="showResponse() ? '100%' : '0%'"
       >
         <div class="workspace-header"><app-chat-response (triggerDasboard)="onClear()" /></div>
       </div>

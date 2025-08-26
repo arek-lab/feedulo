@@ -47,6 +47,8 @@ export class ChatResponseComponent {
   }
 
   notifyParent() {
+    this.storageService.showResponse.set(false);
+    this.storageService.chatResponse.set(null);
     this.triggerDasboard.emit();
   }
 
@@ -58,13 +60,8 @@ export class ChatResponseComponent {
   }
 
   editMode() {
-    this.storageService.isEditingMode.set(true);
+    // this.storageService.isEditingMode.set(true);
     this.storageService.showResponse.set(false);
-    this.storageService.chatResponse.set(null);
-  }
-  newMode() {
-    this.storageService.showResponse.set(false);
-    this.storageService.messageDetails.set(null);
     this.storageService.chatResponse.set(null);
   }
 }
