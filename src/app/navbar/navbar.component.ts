@@ -40,9 +40,9 @@ export class NavbarComponent {
     this.authService.logout().subscribe({
       next: () => {
         this.router.navigate(['auth', 'in']);
+        this.closeMenu();
         this.authService.user.set(null);
         this.authService.loadUser();
-        this.closeMenu();
       },
       error: err => {
         console.log(err);
